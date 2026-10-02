@@ -1,0 +1,2785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>For Ichchha ❤️</title>
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+
+
+<style>
+
+/* =====================================================
+   BASIC
+===================================================== */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:Poppins,sans-serif;
+
+    min-height:100vh;
+
+    color:#63243f;
+
+    background:
+
+    linear-gradient(
+        rgba(255,220,235,.78),
+        rgba(255,235,245,.90)
+    ),
+
+    url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2000&q=90");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-attachment:fixed;
+
+    overflow-x:hidden;
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+.heart{
+
+    position:fixed;
+
+    bottom:-50px;
+
+    pointer-events:none;
+
+    animation:floatHeart linear forwards;
+
+    z-index:9999;
+
+    opacity:.8;
+}
+
+@keyframes floatHeart{
+
+    0%{
+        transform:
+        translateY(0)
+        rotate(0deg)
+        scale(.6);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+
+        transform:
+        translateY(-110vh)
+        rotate(360deg)
+        scale(1.4);
+
+        opacity:0;
+    }
+}
+
+
+/* =====================================================
+   PAGE SYSTEM
+===================================================== */
+
+.page{
+
+    display:none;
+
+    min-height:100vh;
+
+    padding:30px 15px;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+.page.active{
+
+    display:flex;
+
+    animation:pageIn .6s ease;
+}
+
+@keyframes pageIn{
+
+    from{
+        opacity:0;
+        transform:scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+
+/* =====================================================
+   GLASS CARD
+===================================================== */
+
+.card{
+
+    width:min(950px,96%);
+
+    padding:35px;
+
+    border-radius:35px;
+
+    background:
+    rgba(255,255,255,.70);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:
+    1px solid rgba(255,255,255,.8);
+
+    box-shadow:
+    0 25px 70px
+    rgba(100,25,65,.18);
+
+    text-align:center;
+}
+
+
+/* =====================================================
+   TYPOGRAPHY
+===================================================== */
+
+.script{
+
+    font-family:
+    "Great Vibes",
+    cursive;
+
+    color:#a72e67;
+
+    font-size:55px;
+
+    margin:10px 0;
+}
+
+.cute{
+
+    font-family:
+    Caveat,
+    cursive;
+
+    font-size:28px;
+
+    color:#9c3a67;
+}
+
+h1,h2,h3{
+
+    color:#932b5b;
+}
+
+p{
+
+    line-height:1.7;
+
+    color:#765366;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+button{
+
+    font-family:Poppins,sans-serif;
+
+    cursor:pointer;
+
+    border:none;
+
+    transition:.25s;
+}
+
+.primary{
+
+    padding:13px 25px;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff4f96,
+        #c52d70
+    );
+
+    color:white;
+
+    font-weight:600;
+
+    box-shadow:
+    0 10px 25px
+    rgba(197,45,112,.25);
+
+    margin:7px;
+}
+
+.primary:hover{
+
+    transform:
+    translateY(-3px)
+    scale(1.02);
+}
+
+.secondary{
+
+    padding:12px 22px;
+
+    border-radius:50px;
+
+    background:white;
+
+    color:#a02d62;
+
+    font-weight:600;
+
+    margin:7px;
+}
+
+.danger{
+
+    padding:11px 20px;
+
+    border-radius:50px;
+
+    background:white;
+
+    color:#b12e67;
+
+    margin:7px;
+}
+
+
+/* =====================================================
+   LOCK PAGE
+===================================================== */
+
+.lock-icon{
+
+    font-size:90px;
+
+    animation:
+    bounce 2s infinite;
+}
+
+@keyframes bounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+.password{
+
+    width:100%;
+
+    max-width:300px;
+
+    padding:14px 18px;
+
+    border-radius:50px;
+
+    border:
+    2px solid #ffd0e2;
+
+    outline:none;
+
+    text-align:center;
+
+    font-size:16px;
+
+    margin:15px 0;
+}
+
+.password:focus{
+
+    border-color:#ff5b9d;
+}
+
+
+/* =====================================================
+   COUNTDOWN
+===================================================== */
+
+.countdown{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:12px;
+
+    margin:25px auto;
+
+    max-width:650px;
+}
+
+.time-box{
+
+    padding:18px 10px;
+
+    border-radius:22px;
+
+    background:
+    rgba(255,255,255,.8);
+
+    box-shadow:
+    0 10px 25px
+    rgba(100,30,65,.08);
+}
+
+.time-box strong{
+
+    display:block;
+
+    font-size:32px;
+
+    color:#b12966;
+}
+
+.time-box span{
+
+    font-size:11px;
+
+    color:#866675;
+}
+
+
+/* =====================================================
+   SURPRISE MENU
+===================================================== */
+
+.menu{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:14px;
+
+    margin-top:25px;
+}
+
+.menu button{
+
+    padding:20px;
+
+    border-radius:25px;
+
+    background:
+    rgba(255,255,255,.8);
+
+    color:#8f2858;
+
+    font-weight:600;
+
+    box-shadow:
+    0 8px 20px
+    rgba(100,30,65,.08);
+}
+
+.menu button:hover{
+
+    transform:
+    translateY(-5px);
+}
+
+
+/* =====================================================
+   GIFT SELECTOR
+===================================================== */
+
+.gift-tabs{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:8px;
+
+    margin:25px 0;
+}
+
+.gift-tab{
+
+    padding:10px 15px;
+
+    border-radius:50px;
+
+    background:white;
+
+    color:#962a5c;
+
+    font-size:12px;
+
+    font-weight:600;
+}
+
+.gift-tab.active{
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff4f96,
+        #c92f72
+    );
+
+    color:white;
+}
+
+.gift-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:14px;
+
+    margin-top:20px;
+}
+
+.gift-card{
+
+    position:relative;
+
+    padding:20px 10px;
+
+    min-height:165px;
+
+    border-radius:25px;
+
+    background:
+    rgba(255,255,255,.85);
+
+    border:
+    3px solid transparent;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 8px 25px
+    rgba(100,30,65,.08);
+
+    transition:.25s;
+}
+
+.gift-card:hover{
+
+    transform:
+    translateY(-6px);
+}
+
+.gift-card.selected{
+
+    border-color:#ff4f96;
+
+    background:#fff0f7;
+}
+
+.gift-icon{
+
+    font-size:48px;
+
+    margin-bottom:7px;
+}
+
+.gift-card h3{
+
+    font-size:14px;
+
+    margin-bottom:5px;
+}
+
+.gift-card p{
+
+    font-size:11px;
+}
+
+.check{
+
+    position:absolute;
+
+    top:8px;
+
+    right:8px;
+
+    width:28px;
+
+    height:28px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#ff4f96;
+
+    font-weight:bold;
+}
+
+.selected .check{
+
+    background:#ff4f96;
+
+    color:white;
+}
+
+.wishlist{
+
+    margin-top:25px;
+
+    padding:22px;
+
+    border-radius:25px;
+
+    background:
+    rgba(255,235,245,.85);
+}
+
+.selected-gifts{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:8px;
+
+    margin:15px 0;
+}
+
+.gift-pill{
+
+    padding:8px 13px;
+
+    border-radius:50px;
+
+    background:white;
+
+    color:#8f2858;
+
+    font-size:11px;
+}
+
+
+/* =====================================================
+   PHOTO UPLOAD
+===================================================== */
+
+.upload-box{
+
+    margin:25px auto;
+
+    padding:30px;
+
+    max-width:650px;
+
+    border:
+
+    2px dashed
+    #ff7cac;
+
+    border-radius:30px;
+
+    background:
+    rgba(255,255,255,.55);
+}
+
+.upload-label{
+
+    display:inline-block;
+
+    padding:13px 23px;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff4f96,
+        #c92d71
+    );
+
+    color:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    margin-top:15px;
+}
+
+.upload-label input{
+
+    display:none;
+}
+
+.photo-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:12px;
+
+    margin-top:25px;
+}
+
+.photo-card{
+
+    position:relative;
+
+    aspect-ratio:1;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    background:white;
+
+    box-shadow:
+    0 8px 20px
+    rgba(100,30,65,.1);
+}
+
+.photo-card img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+}
+
+.delete-photo{
+
+    position:absolute;
+
+    top:6px;
+
+    right:6px;
+
+    width:30px;
+
+    height:30px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,.9);
+
+    color:#b12e67;
+
+    font-weight:bold;
+}
+
+
+/* =====================================================
+   LOVE LETTER
+===================================================== */
+
+.letter{
+
+    text-align:left;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    background:
+    rgba(255,247,250,.85);
+
+    line-height:2;
+
+    font-family:Caveat,cursive;
+
+    font-size:23px;
+}
+
+
+/* =====================================================
+   REASONS
+===================================================== */
+
+.reason-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:12px;
+
+    margin-top:25px;
+}
+
+.reason{
+
+    padding:20px;
+
+    border-radius:20px;
+
+    background:white;
+
+    color:#8f2858;
+
+    font-weight:600;
+}
+
+
+/* =====================================================
+   LOVE METER
+===================================================== */
+
+.meter{
+
+    height:35px;
+
+    border-radius:50px;
+
+    background:#ffe0ec;
+
+    overflow:hidden;
+
+    margin:25px 0;
+}
+
+.meter-fill{
+
+    width:0%;
+
+    height:100%;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff4f96,
+        #c52d70
+    );
+
+    transition:2s;
+}
+
+
+/* =====================================================
+   BOOK
+===================================================== */
+
+.book{
+
+    min-height:350px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:30px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #fff7fa,
+        #ffe5ef
+    );
+
+    box-shadow:
+    inset 0 0 30px
+    rgba(150,40,90,.08);
+}
+
+.book-text{
+
+    font-family:Caveat,cursive;
+
+    font-size:27px;
+
+    line-height:1.7;
+
+    color:#862653;
+}
+
+
+/* =====================================================
+   FINAL HEART
+===================================================== */
+
+.big-heart{
+
+    font-size:130px;
+
+    animation:
+    heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.18);
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:800px){
+
+    .gift-grid{
+
+        grid-template-columns:
+        repeat(3,1fr);
+    }
+
+    .photo-grid{
+
+        grid-template-columns:
+        repeat(3,1fr);
+    }
+
+    .reason-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+
+    .card{
+
+        padding:22px 14px;
+    }
+
+    .script{
+
+        font-size:42px;
+    }
+
+    .countdown{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .menu{
+
+        grid-template-columns:1fr;
+    }
+
+    .gift-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:9px;
+    }
+
+    .gift-card{
+
+        min-height:145px;
+
+        padding:15px 7px;
+    }
+
+    .gift-icon{
+
+        font-size:40px;
+    }
+
+    .photo-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .reason-grid{
+
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     PASSWORD PAGE
+===================================================== -->
+
+<section class="page active"
+         id="passwordPage">
+
+    <div class="card">
+
+        <div class="lock-icon">
+            🔐
+        </div>
+
+        <h1 class="script">
+            A Little Surprise
+        </h1>
+
+        <p>
+            This little world is made especially for you,
+            Ichchha ❤️
+        </p>
+
+        <input
+            type="password"
+            id="passwordInput"
+            class="password"
+            placeholder="Enter your secret code"
+        >
+
+        <br>
+
+        <button
+            class="primary"
+            onclick="unlock()">
+
+            🔓 Open My Surprise
+
+        </button>
+
+        <p id="wrongPassword"></p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WELCOME PAGE
+===================================================== -->
+
+<section class="page"
+         id="welcomePage">
+
+    <div class="card">
+
+        <div style="font-size:70px">
+            🌸💗🌸
+        </div>
+
+        <h1 class="script">
+            Welcome Ichchha
+        </h1>
+
+        <p class="cute">
+            Your special day is getting closer...
+        </p>
+
+        <br>
+
+        <p>
+            🎂 Birthday:
+            <b>
+                2083/07/05 BS
+            </b>
+        </p>
+
+        <div class="countdown">
+
+            <div class="time-box">
+
+                <strong id="days">
+                    21
+                </strong>
+
+                <span>
+                    DAYS
+                </span>
+
+            </div>
+
+            <div class="time-box">
+
+                <strong id="hours">
+                    00
+                </strong>
+
+                <span>
+                    HOURS
+                </span>
+
+            </div>
+
+            <div class="time-box">
+
+                <strong id="minutes">
+                    00
+                </strong>
+
+                <span>
+                    MINUTES
+                </span>
+
+            </div>
+
+            <div class="time-box">
+
+                <strong id="seconds">
+                    00
+                </strong>
+
+                <span>
+                    SECONDS
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <p>
+            21 days until your birthday,
+            but I couldn't wait to start
+            your surprise. ❤️
+        </p>
+
+
+        <div class="menu">
+
+            <button onclick="showPage('giftPage')">
+                🎁
+                <br>
+                Choose Your Birthday Gifts
+            </button>
+
+            <button onclick="showPage('photoPage')">
+                📸
+                <br>
+                Upload Your Photos
+            </button>
+
+            <button onclick="showPage('letterPage')">
+                💌
+                <br>
+                Secret Love Letter
+            </button>
+
+            <button onclick="showPage('reasonsPage')">
+                💕
+                <br>
+                21 Reasons I Love You
+            </button>
+
+            <button onclick="showPage('bookPage')">
+                📖
+                <br>
+                Our Little Love Book
+            </button>
+
+            <button onclick="showPage('meterPage')">
+                💗
+                <br>
+                Love Meter
+            </button>
+
+            <button onclick="showPage('finalPage')">
+                ✨
+                <br>
+                Final Surprise
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GIFT PAGE
+===================================================== -->
+
+<section class="page"
+         id="giftPage">
+
+    <div class="card">
+
+        <div style="font-size:65px">
+            🎁💗🎀
+        </div>
+
+        <h1 class="script">
+            Choose Your Birthday Gifts
+        </h1>
+
+        <p>
+            Pick as many gifts as you want.
+            Your choices will be saved on this webpage. 💕
+        </p>
+
+
+        <div class="gift-tabs">
+
+            <button class="gift-tab active"
+                    data-category="all">
+
+                ✨ All
+
+            </button>
+
+            <button class="gift-tab"
+                    data-category="clothes">
+
+                👗 Clothes
+
+            </button>
+
+            <button class="gift-tab"
+                    data-category="chocolate">
+
+                🍫 Chocolate
+
+            </button>
+
+            <button class="gift-tab"
+                    data-category="earrings">
+
+                💎 Earrings
+
+            </button>
+
+            <button class="gift-tab"
+                    data-category="rings">
+
+                💍 Rings
+
+            </button>
+
+            <button class="gift-tab"
+                    data-category="beauty">
+
+                💄 Beauty
+
+            </button>
+
+            <button class="gift-tab"
+                    data-category="cute">
+
+                🧸 Cute Gifts
+
+            </button>
+
+            <button class="gift-tab"
+                    data-category="other">
+
+                🎀 Other
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="giftGrid"
+            class="gift-grid">
+        </div>
+
+
+        <div class="wishlist">
+
+            <h2>
+                💝 My Birthday Wishlist
+            </h2>
+
+            <p id="giftCount">
+                0 gifts selected
+            </p>
+
+            <div
+                id="selectedGifts"
+                class="selected-gifts">
+            </div>
+
+            <button
+                class="primary"
+                onclick="saveGifts()">
+
+                💗 Save My Choices
+
+            </button>
+
+            <button
+                class="danger"
+                onclick="clearGifts()">
+
+                🗑️ Clear Wishlist
+
+            </button>
+
+            <p id="giftMessage"></p>
+
+        </div>
+
+
+        <br>
+
+        <button
+            class="secondary"
+            onclick="showPage('welcomePage')">
+
+            ← Back
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PHOTO PAGE
+===================================================== -->
+
+<section class="page"
+         id="photoPage">
+
+    <div class="card">
+
+        <div style="font-size:65px">
+            📸💗
+        </div>
+
+        <h1 class="script">
+            Your Little Photo Garden
+        </h1>
+
+        <p>
+            Upload your favorite memories
+            and make this website yours. 🌸
+        </p>
+
+
+        <div class="upload-box">
+
+            <h2>
+                📷 Add Your Photos
+            </h2>
+
+            <label class="upload-label">
+
+                Choose Photos
+
+                <input
+                    type="file"
+                    id="photoInput"
+                    accept="image/*"
+                    multiple>
+
+            </label>
+
+            <p style="font-size:12px;margin-top:10px">
+                You can select multiple photos.
+            </p>
+
+        </div>
+
+
+        <div
+            id="photoGrid"
+            class="photo-grid">
+        </div>
+
+
+        <button
+            class="danger"
+            onclick="clearPhotos()">
+
+            🗑️ Clear All Photos
+
+        </button>
+
+
+        <br>
+
+        <button
+            class="secondary"
+            onclick="showPage('welcomePage')">
+
+            ← Back
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LOVE LETTER
+===================================================== -->
+
+<section class="page"
+         id="letterPage">
+
+    <div class="card">
+
+        <div style="font-size:65px">
+            💌
+        </div>
+
+        <h1 class="script">
+            A Secret Letter For You
+        </h1>
+
+        <div class="letter">
+
+            My love Ichchha ❤️
+
+            <br><br>
+
+            I don't know if words can ever explain
+            how special you are to me.
+
+            <br><br>
+
+            You are one of those people who can
+            make an ordinary day feel beautiful
+            just by being there.
+
+            <br><br>
+
+            Your smile, your little habits,
+            your way of talking and even the
+            smallest things about you are
+            special to me.
+
+            <br><br>
+
+            So on your birthday, I don't just
+            want to give you a gift.
+
+            <br><br>
+
+            I want to give you a collection of
+            little memories, surprises, smiles
+            and reasons to remember how loved
+            you are.
+
+            <br><br>
+
+            Happy Birthday in advance,
+            my beautiful Ichchha. ❤️
+
+            <br><br>
+
+            Always yours. 💗
+
+        </div>
+
+        <br>
+
+        <button
+            class="secondary"
+            onclick="showPage('welcomePage')">
+
+            ← Back
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     21 REASONS
+===================================================== -->
+
+<section class="page"
+         id="reasonsPage">
+
+    <div class="card">
+
+        <div style="font-size:65px">
+            💕
+        </div>
+
+        <h1 class="script">
+            21 Reasons I Love You
+        </h1>
+
+        <div class="reason-grid">
+
+            <div class="reason">
+                ❤️ Your smile
+            </div>
+
+            <div class="reason">
+                🌸 Your kindness
+            </div>
+
+            <div class="reason">
+                👀 Your beautiful eyes
+            </div>
+
+            <div class="reason">
+                😂 Your laugh
+            </div>
+
+            <div class="reason">
+                💕 Your caring heart
+            </div>
+
+            <div class="reason">
+                🥰 Your cute little habits
+            </div>
+
+            <div class="reason">
+                🌙 Your voice
+            </div>
+
+            <div class="reason">
+                ✨ Your personality
+            </div>
+
+            <div class="reason">
+                🫶 The way you care
+            </div>
+
+            <div class="reason">
+                💗 The way you make me smile
+            </div>
+
+            <div class="reason">
+                🌷 Your beautiful soul
+            </div>
+
+            <div class="reason">
+                😘 Your cute expressions
+            </div>
+
+            <div class="reason">
+                🧸 Your adorable side
+            </div>
+
+            <div class="reason">
+                💎 Your uniqueness
+            </div>
+
+            <div class="reason">
+                🌈 You make life happier
+            </div>
+
+            <div class="reason">
+                🫂 Your warm hugs
+            </div>
+
+            <div class="reason">
+                💌 Your sweet messages
+            </div>
+
+            <div class="reason">
+                🌹 Your beauty
+            </div>
+
+            <div class="reason">
+                🥹 You understand me
+            </div>
+
+            <div class="reason">
+                ❤️ You are simply you
+            </div>
+
+            <div class="reason">
+                ♾️ Because I love you
+            </div>
+
+        </div>
+
+        <br>
+
+        <button
+            class="secondary"
+            onclick="showPage('welcomePage')">
+
+            ← Back
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LOVE BOOK
+===================================================== -->
+
+<section class="page"
+         id="bookPage">
+
+    <div class="card">
+
+        <div style="font-size:60px">
+            📖❤️
+        </div>
+
+        <h1 class="script">
+            Our Little Love Book
+        </h1>
+
+        <p>
+            Page
+            <b id="bookNumber">
+                1
+            </b>
+            of 200
+        </p>
+
+        <div class="book">
+
+            <div
+                id="bookText"
+                class="book-text">
+
+                Dear Ichchha,
+
+                <br><br>
+
+                If I had 200 pages to write
+                about you, I still don't think
+                they would be enough.
+
+            </div>
+
+        </div>
+
+
+        <br>
+
+        <button
+            class="primary"
+            onclick="previousBookPage()">
+
+            ← Previous
+
+        </button>
+
+        <button
+            class="primary"
+            onclick="nextBookPage()">
+
+            Next →
+
+        </button>
+
+        <br>
+
+        <button
+            class="secondary"
+            onclick="showPage('welcomePage')">
+
+            ← Back
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LOVE METER
+===================================================== -->
+
+<section class="page"
+         id="meterPage">
+
+    <div class="card">
+
+        <div style="font-size:70px">
+            💗
+        </div>
+
+        <h1 class="script">
+            Infinite Love Meter
+        </h1>
+
+        <p>
+            Let's see how much love is here...
+        </p>
+
+        <div class="meter">
+
+            <div
+                id="meterFill"
+                class="meter-fill">
+            </div>
+
+        </div>
+
+        <h2 id="meterText">
+            Calculating...
+        </h2>
+
+        <br>
+
+        <button
+            class="primary"
+            onclick="startLoveMeter()">
+
+            💕 Measure Again
+
+        </button>
+
+        <button
+            class="secondary"
+            onclick="showPage('welcomePage')">
+
+            ← Back
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FINAL PAGE
+===================================================== -->
+
+<section class="page"
+         id="finalPage">
+
+    <div class="card">
+
+        <div class="big-heart">
+            ❤️
+        </div>
+
+        <h1 class="script">
+            I Love You Ichchha
+        </h1>
+
+        <p class="cute">
+            More than this little website
+            could ever explain. 💗
+        </p>
+
+        <br>
+
+        <p>
+            Happy Birthday in advance,
+            my love. 🎂🌸
+        </p>
+
+        <br>
+
+        <button
+            class="primary"
+            onclick="celebrate()">
+
+            🎉 One Last Surprise
+
+        </button>
+
+        <br>
+
+        <button
+            class="secondary"
+            onclick="showPage('welcomePage')">
+
+            ← Back
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+/* =====================================================
+   PAGE NAVIGATION
+===================================================== */
+
+function showPage(pageId){
+
+    document
+        .querySelectorAll(".page")
+        .forEach(page =>
+            page.classList.remove("active")
+        );
+
+    document
+        .getElementById(pageId)
+        .classList.add("active");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+
+/* =====================================================
+   PASSWORD
+===================================================== */
+
+function unlock(){
+
+    const password =
+        document
+        .getElementById(
+            "passwordInput"
+        )
+        .value;
+
+    if(password === "0301"){
+
+        showPage(
+            "welcomePage"
+        );
+
+    }else{
+
+        document
+        .getElementById(
+            "wrongPassword"
+        )
+        .innerHTML =
+        "💔 Wrong secret code. Try again.";
+
+    }
+
+}
+
+
+/* =====================================================
+   EXACT BIRTHDAY COUNTDOWN
+===================================================== */
+
+/*
+   2083/07/05 BS
+   =
+   October 22, 2026
+
+   Reference:
+   2083/06/15 BS
+   =
+   October 1, 2026
+
+   Difference:
+   21 days
+*/
+
+const birthdayDate =
+    new Date(
+        "2026-10-22T00:00:00"
+    );
+
+
+function updateCountdown(){
+
+    const now =
+        new Date();
+
+    let target =
+        new Date(
+            birthdayDate
+        );
+
+
+    /*
+       If this year's birthday
+       has passed, count toward
+       next year's birthday.
+    */
+
+    if(now >= target){
+
+        target.setFullYear(
+            target.getFullYear()+1
+        );
+
+    }
+
+
+    const difference =
+        target.getTime() -
+        now.getTime();
+
+
+    const totalSeconds =
+        Math.max(
+            0,
+            Math.floor(
+                difference / 1000
+            )
+        );
+
+
+    const days =
+        Math.floor(
+            totalSeconds / 86400
+        );
+
+
+    const hours =
+        Math.floor(
+            (totalSeconds % 86400)
+            / 3600
+        );
+
+
+    const minutes =
+        Math.floor(
+            (totalSeconds % 3600)
+            / 60
+        );
+
+
+    const seconds =
+        totalSeconds % 60;
+
+
+    document.getElementById(
+        "days"
+    ).textContent =
+        String(days)
+        .padStart(2,"0");
+
+
+    document.getElementById(
+        "hours"
+    ).textContent =
+        String(hours)
+        .padStart(2,"0");
+
+
+    document.getElementById(
+        "minutes"
+    ).textContent =
+        String(minutes)
+        .padStart(2,"0");
+
+
+    document.getElementById(
+        "seconds"
+    ).textContent =
+        String(seconds)
+        .padStart(2,"0");
+
+}
+
+
+updateCountdown();
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+
+/* =====================================================
+   GIFTS
+===================================================== */
+
+const giftStorage =
+    "ichchhaBirthdayGifts";
+
+
+const gifts = [
+
+    /* CLOTHES */
+
+    ["dress","clothes","👗","Pretty Dress"],
+    ["hoodie","clothes","🧥","Cute Hoodie"],
+    ["saree","clothes","🥻","Beautiful Saree"],
+    ["kurti","clothes","👚","Kurti Set"],
+    ["top","clothes","👕","Cute Top"],
+    ["jeans","clothes","👖","Jeans"],
+    ["jacket","clothes","🧥","Stylish Jacket"],
+    ["pajamas","clothes","🩷","Cute Pajamas"],
+
+    /* CHOCOLATE */
+
+    ["box","chocolate","🍫","Chocolate Box"],
+    ["milk","chocolate","🍫","Milk Chocolate"],
+    ["dark","chocolate","🍫","Dark Chocolate"],
+    ["truffle","chocolate","🍬","Chocolate Truffles"],
+    ["hazelnut","chocolate","🌰","Hazelnut Chocolate"],
+    ["surprise","chocolate","🎀","Chocolate Surprise"],
+
+    /* EARRINGS */
+
+    ["stud","earrings","✨","Stud Earrings"],
+    ["hoop","earrings","⭕","Hoop Earrings"],
+    ["drop","earrings","💎","Drop Earrings"],
+    ["heartEarring","earrings","💗","Heart Earrings"],
+    ["pearl","earrings","🤍","Pearl Earrings"],
+    ["flowerEarring","earrings","🌸","Flower Earrings"],
+
+    /* RINGS */
+
+    ["simpleRing","rings","💍","Simple Ring"],
+    ["heartRing","rings","💗","Heart Ring"],
+    ["flowerRing","rings","🌸","Flower Ring"],
+    ["stoneRing","rings","💎","Stone Ring"],
+    ["coupleRing","rings","💞","Couple Ring"],
+    ["initialRing","rings","🔤","Initial Ring"],
+
+    /* BEAUTY */
+
+    ["perfume","beauty","🌹","Perfume"],
+    ["lipstick","beauty","💄","Lipstick"],
+    ["skin","beauty","🧴","Skincare Set"],
+    ["makeup","beauty","💋","Makeup Set"],
+
+    /* CUTE */
+
+    ["teddy","cute","🧸","Teddy Bear"],
+    ["flowers","cute","💐","Flower Bouquet"],
+    ["musicbox","cute","🎶","Music Box"],
+    ["frame","cute","🖼️","Photo Frame"],
+
+    /* OTHER */
+
+    ["watch","other","⌚","Watch"],
+    ["handbag","other","👜","Handbag"],
+    ["shoes","other","👟","Shoes"],
+    ["phonecase","other","📱","Cute Phone Case"],
+    ["mystery","other","🎁","Mystery Gift"]
+
+];
+
+
+let selectedGifts =
+    JSON.parse(
+        localStorage.getItem(
+            giftStorage
+        ) || "[]"
+    );
+
+
+let currentCategory =
+    "all";
+
+
+function renderGifts(){
+
+    const grid =
+        document.getElementById(
+            "giftGrid"
+        );
+
+    grid.innerHTML = "";
+
+
+    gifts
+    .filter(
+        gift =>
+        currentCategory === "all" ||
+        gift[1] === currentCategory
+    )
+    .forEach(
+        gift => {
+
+            const selected =
+                selectedGifts
+                .includes(gift[0]);
+
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "gift-card" +
+                (
+                    selected
+                    ? " selected"
+                    : ""
+                );
+
+
+            card.innerHTML = `
+
+                <div class="check">
+
+                    ${
+                        selected
+                        ? "✓"
+                        : "+"
+                    }
+
+                </div>
+
+                <div class="gift-icon">
+
+                    ${gift[2]}
+
+                </div>
+
+                <h3>
+
+                    ${gift[3]}
+
+                </h3>
+
+                <p>
+
+                    ${
+                        selected
+                        ? "Selected ❤️"
+                        : "Tap to choose"
+                    }
+
+                </p>
+
+            `;
+
+
+            card.onclick =
+                function(){
+
+                    if(
+                        selectedGifts
+                        .includes(
+                            gift[0]
+                        )
+                    ){
+
+                        selectedGifts =
+                            selectedGifts
+                            .filter(
+                                id =>
+                                id !== gift[0]
+                            );
+
+                    }else{
+
+                        selectedGifts
+                            .push(
+                                gift[0]
+                            );
+
+                    }
+
+
+                    saveGifts();
+
+                    renderGifts();
+
+                    renderWishlist();
+
+                };
+
+
+            grid.appendChild(
+                card
+            );
+
+        }
+    );
+
+}
+
+
+function renderWishlist(){
+
+    const container =
+        document.getElementById(
+            "selectedGifts"
+        );
+
+
+    const count =
+        document.getElementById(
+            "giftCount"
+        );
+
+
+    count.textContent =
+        selectedGifts.length +
+        " gift" +
+        (
+            selectedGifts.length === 1
+            ? ""
+            : "s"
+        ) +
+        " selected 💗";
+
+
+    container.innerHTML = "";
+
+
+    if(
+        selectedGifts.length === 0
+    ){
+
+        container.innerHTML = `
+
+            <span>
+                ✨ Pick anything you would love!
+            </span>
+
+        `;
+
+        return;
+    }
+
+
+    selectedGifts.forEach(
+        id => {
+
+            const gift =
+                gifts.find(
+                    g =>
+                    g[0] === id
+                );
+
+
+            if(!gift)return;
+
+
+            const pill =
+                document.createElement(
+                    "div"
+                );
+
+
+            pill.className =
+                "gift-pill";
+
+
+            pill.textContent =
+                gift[2] +
+                " " +
+                gift[3];
+
+
+            container.appendChild(
+                pill
+            );
+
+        }
+    );
+
+}
+
+
+function saveGifts(){
+
+    localStorage.setItem(
+        giftStorage,
+        JSON.stringify(
+            selectedGifts
+        )
+    );
+
+
+    document.getElementById(
+        "giftMessage"
+    ).textContent =
+        "💗 Your birthday gift choices are saved!";
+
+}
+
+
+function clearGifts(){
+
+    selectedGifts = [];
+
+
+    localStorage.removeItem(
+        giftStorage
+    );
+
+
+    renderGifts();
+
+    renderWishlist();
+
+
+    document.getElementById(
+        "giftMessage"
+    ).textContent =
+        "🩷 Wishlist cleared.";
+
+}
+
+
+/* CATEGORY BUTTONS */
+
+document
+.querySelectorAll(
+    ".gift-tab"
+)
+.forEach(
+    button => {
+
+        button.onclick =
+            function(){
+
+                document
+                .querySelectorAll(
+                    ".gift-tab"
+                )
+                .forEach(
+                    b =>
+                    b.classList
+                    .remove(
+                        "active"
+                    )
+                );
+
+
+                this.classList
+                    .add(
+                        "active"
+                    );
+
+
+                currentCategory =
+                    this.dataset
+                    .category;
+
+
+                renderGifts();
+
+            };
+
+    }
+);
+
+
+renderGifts();
+
+renderWishlist();
+
+
+/* =====================================================
+   PHOTO UPLOAD
+===================================================== */
+
+const photoStorage =
+    "ichchhaBirthdayPhotos";
+
+
+let photos =
+    JSON.parse(
+        localStorage.getItem(
+            photoStorage
+        ) || "[]"
+    );
+
+
+function renderPhotos(){
+
+    const grid =
+        document.getElementById(
+            "photoGrid"
+        );
+
+
+    grid.innerHTML = "";
+
+
+    photos.forEach(
+        (photo,index) => {
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "photo-card";
+
+
+            card.innerHTML = `
+
+                <img
+                    src="${photo}"
+                    alt="Memory"
+                >
+
+                <button
+                    class="delete-photo"
+                    onclick="
+                        deletePhoto(${index})
+                    ">
+
+                    ×
+
+                </button>
+
+            `;
+
+
+            grid.appendChild(
+                card
+            );
+
+        }
+    );
+
+}
+
+
+document
+.getElementById(
+    "photoInput"
+)
+.addEventListener(
+    "change",
+    function(event){
+
+        const files =
+            Array.from(
+                event.target.files
+            );
+
+
+        files.forEach(
+            file => {
+
+                if(
+                    !file.type
+                    .startsWith(
+                        "image/"
+                    )
+                ){
+
+                    return;
+
+                }
+
+
+                const reader =
+                    new FileReader();
+
+
+                reader.onload =
+                    function(e){
+
+                        photos.push(
+                            e.target.result
+                        );
+
+
+                        /*
+                           Keep maximum
+                           30 photos.
+                        */
+
+                        if(
+                            photos.length > 30
+                        ){
+
+                            photos =
+                                photos.slice(
+                                    -30
+                                );
+
+                        }
+
+
+                        localStorage.setItem(
+                            photoStorage,
+                            JSON.stringify(
+                                photos
+                            )
+                        );
+
+
+                        renderPhotos();
+
+                    };
+
+
+                reader.readAsDataURL(
+                    file
+                );
+
+            }
+        );
+
+
+        this.value = "";
+
+    }
+);
+
+
+function deletePhoto(index){
+
+    photos.splice(
+        index,
+        1
+    );
+
+
+    localStorage.setItem(
+        photoStorage,
+        JSON.stringify(
+            photos
+        )
+    );
+
+
+    renderPhotos();
+
+}
+
+
+function clearPhotos(){
+
+    photos = [];
+
+
+    localStorage.removeItem(
+        photoStorage
+    );
+
+
+    renderPhotos();
+
+}
+
+
+renderPhotos();
+
+
+/* =====================================================
+   200 PAGE LOVE BOOK
+===================================================== */
+
+let bookPage = 1;
+
+
+const bookMessages = [
+
+    "Dear Ichchha, you make ordinary days feel special. ❤️",
+
+    "Your smile is one of my favorite things in this world. 🌸",
+
+    "You are beautiful in ways that pictures cannot completely capture. 💗",
+
+    "Every little memory with you feels precious. ✨",
+
+    "If happiness had a face, I think it would look a little like you. 🥰",
+
+    "You make my world a little brighter just by being yourself. 🌷",
+
+    "I hope your birthday brings you every smile you deserve. 🎂",
+
+    "You are not just part of my favorite memories. You are part of my favorite future. ❤️",
+
+    "Some people enter our lives and quietly become our favorite person. You are that person. 💕",
+
+    "No matter how many pages I write, there will always be another reason to love you."
+
+];
+
+
+function updateBook(){
+
+    document.getElementById(
+        "bookNumber"
+    ).textContent =
+        bookPage;
+
+
+    let text =
+        bookMessages[
+            (bookPage-1)
+            %
+            bookMessages.length
+        ];
+
+
+    if(bookPage > 10){
+
+        text =
+            "Page " +
+            bookPage +
+            " of my little love book. " +
+            "And somehow, I still have more reasons to smile because of you. ❤️";
+
+    }
+
+
+    document.getElementById(
+        "bookText"
+    ).innerHTML =
+        text;
+
+}
+
+
+function nextBookPage(){
+
+    if(bookPage < 200){
+
+        bookPage++;
+
+    }
+
+    updateBook();
+
+}
+
+
+function previousBookPage(){
+
+    if(bookPage > 1){
+
+        bookPage--;
+
+    }
+
+    updateBook();
+
+}
+
+
+/* =====================================================
+   LOVE METER
+===================================================== */
+
+function startLoveMeter(){
+
+    const fill =
+        document.getElementById(
+            "meterFill"
+        );
+
+
+    const text =
+        document.getElementById(
+            "meterText"
+        );
+
+
+    fill.style.width =
+        "0%";
+
+
+    text.textContent =
+        "Calculating...";
+
+
+    setTimeout(
+        function(){
+
+            fill.style.width =
+                "100%";
+
+
+            setTimeout(
+                function(){
+
+                    text.textContent =
+                        "∞% ... There is no maximum. ❤️";
+
+                },
+                2000
+            );
+
+        },
+        300
+    );
+
+}
+
+
+startLoveMeter();
+
+
+/* =====================================================
+   FINAL CELEBRATION
+===================================================== */
+
+function celebrate(){
+
+    for(
+        let i=0;
+        i<40;
+        i++
+    ){
+
+        setTimeout(
+            createHeart,
+            i * 80
+        );
+
+    }
+
+
+    alert(
+        "I LOVE YOU ICHCHHA DARLING ❤️🎂💗"
+    );
+
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+function createHeart(){
+
+    const heart =
+        document.createElement(
+            "div"
+        );
+
+
+    heart.className =
+        "heart";
+
+
+    heart.textContent =
+        [
+            "❤️",
+            "💗",
+            "💕",
+            "💖",
+            "💞",
+            "🌸"
+        ]
+        [
+            Math.floor(
+                Math.random()*6
+            )
+        ];
+
+
+    heart.style.left =
+        Math.random()*100 +
+        "%";
+
+
+    heart.style.fontSize =
+        (15 +
+        Math.random()*25) +
+        "px";
+
+
+    heart.style.animationDuration =
+        (4 +
+        Math.random()*5) +
+        "s";
+
+
+    document.body
+        .appendChild(
+            heart
+        );
+
+
+    setTimeout(
+        () =>
+        heart.remove(),
+        10000
+    );
+
+}
+
+
+setInterval(
+    createHeart,
+    900
+);
+
+</script>
+
+</body>
+
+</html>
